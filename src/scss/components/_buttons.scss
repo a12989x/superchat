@@ -1,0 +1,33 @@
+button {
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.3s;
+    font-size: 1.2rem;
+
+    svg {
+        position: relative;
+        top: 2px;
+        margin-right: 0.5rem;
+    }
+
+    &.sign-in {
+        color: $dark-color;
+        background-color: $light-color;
+        padding: 1rem 1.5rem;
+        width: 80%;
+
+        &:hover {
+            border-color: #4285f4;
+        }
+    }
+
+    &.sign-out {
+        padding: 0.5rem 1rem;
+        color: $light-color;
+        background-color: $second-dark-color;
+
+        &:hover {
+            background-color: $accent-color;
+        }
+    }
+}
