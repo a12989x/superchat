@@ -1,0 +1,56 @@
+.messages {
+    padding: 1rem 2rem;
+    width: 100%;
+    min-height: calc(100vh - 8rem - 9rem);
+    max-height: calc(100vh - 8rem - 9rem);
+    overflow-y: auto;
+
+    .message {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+
+        p {
+            max-width: 60%;
+            margin: 0 0.8rem;
+            min-height: 40px;
+            padding: 0.5rem 1rem;
+            line-height: 1.3rem;
+        }
+
+        &__sent {
+            justify-content: end;
+            flex-direction: row-reverse;
+            text-align: end;
+
+            p {
+                background-color: $accent-color;
+            }
+        }
+
+        &__received {
+            justify-content: start;
+
+            p {
+                background-color: $light-color;
+                color: $dark-color;
+            }
+        }
+
+        img {
+            height: 2.5rem;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .messages {
+        padding: 0.5rem 1rem;
+        min-height: calc(100vh - 9rem);
+    }
+}
