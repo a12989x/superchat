@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import firebase from 'firebase/app';
@@ -76,6 +76,10 @@ const ChatRoom = () => {
     const query = messagesRef.orderBy('createdAt').limit(25);
 
     const [messages] = useCollectionData(query, { idField: 'id' });
+
+    useEffect(() => {
+        dummy.current.scrollIntoView({ behavior: 'smooth' });
+    }, [messages]);
 
     const sendMessage = async (e) => {
         e.preventDefault();
