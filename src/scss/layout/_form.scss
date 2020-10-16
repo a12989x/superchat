@@ -1,0 +1,24 @@
+.form {
+    height: 8vh;
+    width: 100%;
+    display: grid;
+    grid-template: 1fr / 4fr 1fr;
+
+    input {
+        background-color: $gray-color;
+        color: $light-color;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border: 2px solid transparent;
+    }
+
+    button {
+        background-color: $accent-color;
+        color: $light-color;
+
+        &:disabled {
+            cursor: not-allowed;
+            color: $second-dark-color;
+        }
+    }
+}
